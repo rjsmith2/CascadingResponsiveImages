@@ -22,6 +22,12 @@ On .htaccess, change '\<your domain\>' to your ip address or your domain (192.10
 .htaccess creates a cookie based on  URL parameters given by CSS.
 .htaccess will redirect original image to their optimal resized image based on cookie named MW. (if cookie MW=large, dog.jpg will get redirected to dog_l.jpg)
 
-The cookie 'mw' will contain a value such as 'large','medium','small', etc. (You can create more if desired)
+The cookie 'mw' will contain a value such as 'large','medium','small', etc. (can create more if desired, just update .htaccess and importDetection.css)
+
+<b>Other considerations </b><br />
+If the cookie MW is not set before image are loaded, original image will be loaded instead.
+Desktop may re-trigger importDetection.css  to set a new cookie multiple times if user is resizing windows. (If user resize window to really small, importDetection.css will set the cookie MW=small. Whereas if user resize window to HUGE, importDetection.css will set the cookie MW=large)
+
+
 
 
