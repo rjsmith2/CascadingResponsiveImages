@@ -10,3 +10,5 @@ Access to modify scripts serverside (.htaccess, PHP, etc)
 CSS and cookie must be enabled in the browser settings.
 
 <b>Configuration</b><br />
+On .htaccess, change <your domain> to your ip address or your domain (192.100.100.100, example.com, etc)
+</code>
