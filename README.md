@@ -10,15 +10,17 @@ Access to modify scripts serverside (.htaccess, PHP, etc)
 CSS and cookie must be enabled in the browser settings.
 
 <b>Configuration</b><br />
-On .htaccess, change <your domain> to your ip address or your domain (192.100.100.100, example.com.  Do not include http://)
+On .htaccess, change '\<your domain\>' to your ip address or your domain (192.100.100.100, example.com.  Do not include http://)
 
 .htaccess creates a cookie based on GET parameter given by CSS.
 .htaccess will redirect original image to their optimal resized image based on cookie. (if cookie MW=large, dog.jpg will get redirected to dog_l.jpg)
 
+The cookie 'mw' will contain a value such as 'large','medium','small', etc. (You can create more if needed)
 
+To create a more cookie values like 'large'. Copy and paste and replace 'large' to something else and rename '$1_l.$2' to '$1_2.$2'. So if you wish to make a new cookie value called retina to display 4k resolution image, then replace large to retina and change /responsiveImage/$1_l.$2 to /responsiveImage/$1_r.$2 (notice the change from _l to _r)
 # 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif)  [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(large) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_l.$2 [R=302,L]#
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/responsiveImage/$1_l.$2 [R=302,L]#
 
