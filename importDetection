@@ -1,26 +1,3 @@
-/* set image width cookie for smartphones
-@import url('responsiveDetection.css?mw=small') only screen and (min-width:0px) and (max-width:359px);
-
-/* Note the issue that using @import may suspend the browser from making further fetches until it finishes downloading, making it useful to suspend images from  loading until cookie has been set from the server first*/
-
-/* Otherwise use LINK tag for better concurrency performance*/
-    
-
-
-/* set image width cookie for desktop
-@media screen and (min-width:762px){
-body{background-image:url('php.php?mw=large');}
-
-}
-/* set image width cookie for tablet
-@media screen and (min-width:360px) and (max-width:761px) {
-body{background-image:url('php.php?mw=medium');}
-}
-/* set image width cookie for smartphones
-@media screen and (min-width:0px) and (max-width:359px) {
-body{background-image:url('php.php?mw=small');}
-}
-
 /* set image width cookie for desktop*/
 @media screen and (min-width:762px){
 body{background-image:url('transparent.gif?mw=large');}
