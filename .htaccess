@@ -2,13 +2,13 @@ RewriteEngine on
 	#to set a cookie
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(large) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:large:<your domain>:1440:/]#redirect original image to large image
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:large:<your domain>:1440:/]
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(medium) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:medium:<your domain>:1440:/]#redirect original image to medium image
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:medium:<your domain>:1440:/]
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(small) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:small:<your domain>:1440:/]#redirect original image to small image
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:small:<your domain>:1440:/]
 
 	#responsive image for Large picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
