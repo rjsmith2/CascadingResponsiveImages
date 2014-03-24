@@ -26,6 +26,7 @@ The cookie 'mw' will contain a value such as 'large','medium','small', etc. (can
 
 <b>Other considerations </b><br />
 If the cookie MW is not set before image are loaded, original image will be loaded instead.
+
 Desktop may re-trigger importDetection.css  to set a new cookie multiple times if user is resizing windows. (If user resize window to really small, importDetection.css will set the cookie MW=small. Whereas if user resize window to HUGE, importDetection.css will set the cookie MW=large)
 
 
