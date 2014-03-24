@@ -10,5 +10,15 @@ Access to modify scripts serverside (.htaccess, PHP, etc)
 CSS and cookie must be enabled in the browser settings.
 
 <b>Configuration</b><br />
-On .htaccess, change <your domain> to your ip address or your domain (192.100.100.100, example.com, etc)
-</code>
+On .htaccess, change <your domain> to your ip address or your domain (192.100.100.100, example.com.  Do not include http://)
+
+.htaccess creates a cookie based on GET parameter given by CSS.
+.htaccess will redirect original image to their optimal resized image based on cookie. (if cookie MW=large, dog.jpg will get redirected to dog_l.jpg)
+
+
+# 
+	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif)  [NC]
+	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
+	RewriteCond %{HTTP_COOKIE} mw=(large) [NC]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_l.$2 [R=302,L]#
+
