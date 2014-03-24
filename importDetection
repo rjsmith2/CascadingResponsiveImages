@@ -33,6 +33,6 @@ body{background-image:url('transparent.gif?mw=medium');}
 /* set image width cookie for smartphones*/
 @media screen and (min-width:0px) and (max-width:359px) {
 body{background-image:url('transparent.gif?mw=small');}
-}
+} 
 
 
