@@ -14,16 +14,16 @@ RewriteEngine on
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(large) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_l.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/responsiveImage/$1_l.$2 [R=302,L]
 
 	#responsive image for medium picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(medium) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_m.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/responsiveImage/$1_m.$2 [R=302,L]
 
 	#responsive image for small picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(small) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_s.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/responsiveImage/$1_s.$2 [R=302,L]
