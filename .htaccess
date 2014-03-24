@@ -2,28 +2,28 @@ RewriteEngine on
 	#to set a cookie
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(large) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:large:68.47.141.43:1440:/]
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:large:<your domain>:1440:/]
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(medium) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:medium:68.47.141.43:1440:/]
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:medium:<your domain>:1440:/]
 	RewriteCond %{REQUEST_URI} transparent.gif [NC]
 	RewriteCond %{QUERY_STRING} ^(.*?)mw=(small) [NC]
-	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:small:68.47.141.43:1440:/]
+	RewriteRule (.*) $1 [QSA,L,R=204,CO=mw:small:<your domain>:1440:/]
 
 	#responsive image for Large picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(large) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://68.47.141.43/testCase/responsiveImage/$1_l.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_l.$2 [R=302,L]
 
 	#responsive image for medium picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(medium) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://68.47.141.43/testCase/responsiveImage/$1_m.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_m.$2 [R=302,L]
 
 	#responsive image for small picture 
 	RewriteCond %{REQUEST_URI} ^(.*?)\.(jpg|png|jpeg|bmp|gif) [NC]
 	RewriteCond %{REQUEST_URI} !/responsiveImage/ [NC]
 	RewriteCond %{HTTP_COOKIE} mw=(small) [NC]
-	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://68.47.141.43/testCase/responsiveImage/$1_s.$2 [R=302,L]
+	RewriteRule ^.*?image/(.*?)\.(.*?)$ http://<your domain>/testCase/responsiveImage/$1_s.$2 [R=302,L]
